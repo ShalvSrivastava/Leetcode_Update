@@ -1,0 +1,8 @@
+#Leetcode_Reverse_integer_7
+
+class Solution(object):
+    def reverse(self, x):
+        sign = 1 if x >= 0 else -1
+        x = abs(x)
+        reversed_num = int(str(x)[::-1]) * sign
+        return reversed_num if -2**31 <= reversed_num <= 2**31 - 1 else 0
