@@ -1,0 +1,20 @@
+#Leetcode_daily_75_Sort_Colors
+
+class Solution(object):
+    def sortColors(self, nums):
+        red_ptr = 0
+        white_ptr = 0
+        blue_ptr = len(nums) - 1
+        
+        while white_ptr <= blue_ptr:
+            if nums[white_ptr] == 0:
+                nums[white_ptr], nums[red_ptr] = nums[red_ptr], nums[white_ptr]
+                white_ptr += 1
+                red_ptr += 1
+            elif nums[white_ptr] == 1:
+                white_ptr += 1
+            else:
+                nums[white_ptr], nums[blue_ptr] = nums[blue_ptr], nums[white_ptr]
+                blue_ptr -= 1
+        
+        return nums
